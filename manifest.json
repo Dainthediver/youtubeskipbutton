@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Skip Dismiss Extension",
+  "version": "2.0",
+  "description": "Automatically finds and clicks skip/dismiss buttons on websites, especially YouTube ads",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Skip Dismiss Extension"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
